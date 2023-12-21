@@ -1,9 +1,15 @@
+"use client";
 import Link from "next/link";
 import GithubIcon from "../assets/githubIcon";
 import LinkedinIcon from "../assets/linkedinIcon";
 import TelegramIcon from "../assets/telegramIcon";
+import useStore from "../store/store";
 
 const LeftSection = () => {
+  const isAboutInView = useStore((state) => state.isAboutInView);
+  const isExperienceInView = useStore((state) => state.isExperienceInView);
+  const isProjectsInView = useStore((state) => state.isProjectsInView);
+
   return (
     <div className="sticky h-[80vh] top-20 bottom-10 flex flex-col justify-between">
       {/* INFO */}
@@ -21,20 +27,47 @@ const LeftSection = () => {
       {/* CURRENT SECTION INDICATOR */}
       <div className="flex flex-col gap-4 text-[12px] mt-16 w-max">
         <div className="flex items-center gap-2">
-          <span className="w-16 h-[2px] bg-slate-200"></span>
-          <Link className="text-slate-200 uppercase font-bold" href={"#about"}>
+          <span
+            className={`${
+              isAboutInView ? "w-16 bg-slate-200" : "w-8 bg-[#94A3B8]"
+            } transition-all h-[2px]`}
+          ></span>
+          <Link
+            className={`${
+              isAboutInView ? "text-slate-200" : "text-[#94A3B8]"
+            } uppercase font-bold`}
+            href={"#about"}
+          >
             About
           </Link>
         </div>
         <div className="flex items-center gap-2">
-          <span className="w-8 h-[2px] bg-[#94A3B8]"></span>
-          <Link className="uppercase" href={"#experience"}>
+          <span
+            className={`${
+              isExperienceInView ? "w-16 bg-slate-200" : "w-8 bg-[#94A3B8]"
+            } transition-all h-[2px]`}
+          ></span>
+          <Link
+            className={`${
+              isExperienceInView ? "text-slate-200" : "text-[#94A3B8]"
+            } uppercase font-bold`}
+            href={"#experience"}
+          >
             Experience
           </Link>
         </div>
         <div className="flex items-center gap-2">
-          <span className="w-8 h-[2px] bg-[#94A3B8]"></span>
-          <Link className="uppercase" href={"#projects"}>
+          <span
+            className={`${
+              isProjectsInView ? "w-16 bg-slate-200" : "w-8 bg-[#94A3B8]"
+            } transition-all h-[2px]`}
+          ></span>
+          <Link
+            className={`${
+              isProjectsInView ? "text-slate-200" : "text-[#94A3B8]"
+            } uppercase font-bold`}
+            href={"#projects"}
+          >
             Projects
           </Link>
         </div>

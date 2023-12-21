@@ -50,5 +50,12 @@
       ],
       "compleatedProjects": []
     }
+  ],
+  "projects": [
+    {
+      "title": "Melagrana online store",
+      "projectLink": "https://melagrana.uz/",
+      "content": "I dedicated over one and a half months to the development of this project, which resulted in the creation of a fully functional online store. This platform allows users to make purchases using the Payme payment system. The technologies employed in this project include Next.js, Tailwind CSS, Redux Toolkit, Framer Motion, and TypeScript."
+    }
   ]
 }

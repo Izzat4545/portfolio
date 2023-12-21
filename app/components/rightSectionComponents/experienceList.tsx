@@ -1,6 +1,8 @@
 "use client";
+import ArrowIcon from "@/app/assets/arrowIcon";
 import LinkIcon from "@/app/assets/linkIcon";
 import Link from "next/link";
+import { MutableRefObject } from "react";
 
 type Props = {
   fromTo: string;
@@ -21,8 +23,11 @@ const ExperienceList = (props: Props) => {
       className="cursor-pointer group hover:bg-slate-800/50 hover:drop-shadow-lg transition-all p-5 rounded-lg"
       onClick={() => window.open(props.companyWebsite, "_blank")}
     >
-      <div className="text-slate-200 group-hover:text-teal-300 transition-all text-[18px] font-bold">
-        {props.role}
+      <div className="text-slate-200 group-hover:text-teal-300 flex items-center transition-all text-[18px] font-bold">
+        <div>{props.role}</div>
+        <div className="rotate-[-45deg]">
+          <ArrowIcon />
+        </div>
       </div>
       <Link target="_blank" href={props.companyWebsite}>
         {props.companyName}
