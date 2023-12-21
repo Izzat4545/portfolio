@@ -1,3 +1,4 @@
+"use client";
 import LinkIcon from "@/app/assets/linkIcon";
 import Link from "next/link";
 
@@ -11,10 +12,18 @@ type Props = {
   tools: string[];
   compleatedProjects?: string[];
 };
+const stopPropagation = (e: any) => {
+  e.stopPropagation();
+};
 const ExperienceList = (props: Props) => {
   return (
-    <div>
-      <div className="text-slate-200 text-[18px] font-bold">{props.role}</div>
+    <div
+      className="cursor-pointer group hover:bg-slate-800/50 hover:drop-shadow-lg transition-all p-5 rounded-lg"
+      onClick={() => window.open(props.companyWebsite, "_blank")}
+    >
+      <div className="text-slate-200 group-hover:text-teal-300 transition-all text-[18px] font-bold">
+        {props.role}
+      </div>
       <Link target="_blank" href={props.companyWebsite}>
         {props.companyName}
       </Link>
@@ -32,6 +41,7 @@ const ExperienceList = (props: Props) => {
             <div className="flex items-center mt-2" key={index}>
               <LinkIcon />
               <Link
+                onClick={stopPropagation}
                 className="text-slate-200"
                 target="_blank"
                 href={"https://" + value}

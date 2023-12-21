@@ -12,7 +12,7 @@ const LeftSection = () => {
           Izzatbek Sultonov
         </div>
         <div className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
-          Experienced Front-End Engineer
+          Front-End Engineer
         </div>
         <p className="mt-4 max-w-xs leading-normal">
           I build exceptional and accessible digital experiences for the web.
@@ -41,13 +41,16 @@ const LeftSection = () => {
       </div>
       {/* SOCIALS */}
       <div className="flex gap-3 ml-1 mt-8 items-center">
-        <Link href={"https://github.com/Izzat4545"}>
+        <Link target="_blank" href={"https://github.com/Izzat4545"}>
           <GithubIcon />
         </Link>
-        <Link href={"https://www.linkedin.com/in/izzatbek-sultonov-70a632245/"}>
+        <Link
+          target="_blank"
+          href={"https://www.linkedin.com/in/izzatbek-sultonov-70a632245/"}
+        >
           <LinkedinIcon />
         </Link>
-        <Link href={"https://t.me/dev_boi"}>
+        <Link target="_blank" href={"https://t.me/dev_boi"}>
           <TelegramIcon />
         </Link>
       </div>

@@ -1,5 +1,7 @@
 import ExperienceList from "./rightSectionComponents/experienceList";
 import data from "../data/data.json";
+import Link from "next/link";
+import ArrowIcon from "../assets/arrowIcon";
 
 const RightSection = () => (
   <div className="w-[50%] py-20">
@@ -17,7 +19,7 @@ const RightSection = () => (
         running around Hyrule searching for Korok seeds K o r o k s e e d s .
       </p>
     </div>
-    <div className="mt-40 flex flex-col gap-9">
+    <div className="mt-40 flex flex-col gap-1">
       {data.experice.map((value, index) => (
         <ExperienceList
           key={index}
@@ -31,6 +33,16 @@ const RightSection = () => (
           compleatedProjects={value.compleatedProjects}
         />
       ))}
+    </div>
+    <div className="mt-7 flex items-center w-[130px] group">
+      <Link
+        className="font-bold text-slate-200 hover:text-teal-300 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[2px] after:bottom-0 after:left-0 after:bg-teal-300 after:transition-all origin-bottom-right hover:after:scale-x-100 hover:after:origin-bottom-left"
+        href={"/resume.pdf"}
+        target="_blank"
+      >
+        <div>View Résumé</div>
+      </Link>
+      <ArrowIcon />
     </div>
   </div>
 );
