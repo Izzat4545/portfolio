@@ -1,0 +1,54 @@
+{
+  "experice": [
+    {
+      "fromTo": "Dec 2023 - Present",
+      "companyName": "Itransition Group",
+      "companyWebsite": "https://www.itransition.com/",
+      "role": "Frontend Engineer",
+      "position": "Internship",
+      "content": "<li>Acquired proficiency in state management methodologies throughout the course of the internship, acquired foundational knowledge of Node.js, and developed a more comprehensive understanding of React.js.</li>",
+      "tools": ["React.js", "Node.js", "Git", "GitHub", "Redux.js"],
+      "compleatedProjects": []
+    },
+    {
+      "fromTo": "Nov 2023 - Present",
+      "role": "Frontent Engineer",
+      "companyName": "Next Level Group",
+      "companyWebsite": "https://nextlevelgroup.uz/",
+      "position": "Internship",
+      "content": "<li>Optimized platform performance to enhance user experience</li> <li>Implemented innovative features to enrich the platform's capabilities</li> <li>Proactively analyzed and addressed potential issues for continuous improvement</li><li>Fostered effective collaboration with cross-functional teams for seamless integration</li>",
+      "tools": [
+        "Next js",
+        "Js",
+        "TypeScript",
+        "React.js",
+        "GitHub",
+        "Git",
+        "Redux.js",
+        "REST APIs",
+        "CSS",
+        "Tailwind CSS",
+        "Framer motion"
+      ],
+      "compleatedProjects": ["melagrana.uz"]
+    },
+    {
+      "fromTo": "Dec 2022 - Jun 2023",
+      "role": "QA Automation Engineer",
+      "companyName": "a1qa",
+      "companyWebsite": "https://www.a1qa.com/",
+      "position": "Internship",
+      "content": "<li>Gained a deep understanding and proficiency in applying advanced OOP principles.</li><li>Developed comfort and proficiency in utilizing Java for testing various types of web interfaces.</li><li>Acquired skills in testing APIs using Java.</li><li>Learned the essential concepts and practices of Continuous Integration/Continuous Deployment (CI/CD) and Docker.</li>",
+      "tools": [
+        "API Testing",
+        "Jenkins",
+        "GitHub",
+        "Git",
+        "Docker",
+        "Java",
+        "Selenium"
+      ],
+      "compleatedProjects": []
+    }
+  ]
+}

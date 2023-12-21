@@ -5,7 +5,7 @@ import TelegramIcon from "../assets/telegramIcon";
 
 const LeftSection = () => {
   return (
-    <div className="sticky top-20 flex flex-col justify-between">
+    <div className="sticky h-[80vh] top-20 bottom-10 flex flex-col justify-between">
       {/* INFO */}
       <div>
         <div className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
