@@ -4,13 +4,14 @@ import data from "../data/data.json";
 import Link from "next/link";
 import ArrowIcon from "../assets/arrowIcon";
 import ProjectsList from "./rightSectionComponents/projectsList";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import useStore from "../store/store";
 
 const RightSection = () => {
   const setAboutInView = useStore((state) => state.setAboutInView);
   const setExpericeInView = useStore((state) => state.setExperienceInView);
   const setProjectsInView = useStore((state) => state.setProjectsInView);
+  const [currentIndex, setCurrentIndex] = useState<number>();
 
   const scrollPosition = useRef(0);
   useEffect(() => {
@@ -83,17 +84,27 @@ const RightSection = () => {
       </div>
       <div id="experience" className="mt-32 flex flex-col gap-1">
         {data.experice.map((value, index) => (
-          <ExperienceList
+          <div
+            onMouseEnter={() => setCurrentIndex(index)}
+            onMouseLeave={() => setCurrentIndex(undefined)}
+            className={`${
+              currentIndex === undefined || currentIndex === index
+                ? "opacity-100"
+                : "opacity-50"
+            } transition-all`}
             key={index}
-            companyName={value.companyName}
-            companyWebsite={value.companyWebsite}
-            fromTo={value.fromTo}
-            content={value.content}
-            position={value.position}
-            role={value.role}
-            tools={value.tools}
-            compleatedProjects={value.compleatedProjects}
-          />
+          >
+            <ExperienceList
+              companyName={value.companyName}
+              companyWebsite={value.companyWebsite}
+              fromTo={value.fromTo}
+              content={value.content}
+              position={value.position}
+              role={value.role}
+              tools={value.tools}
+              compleatedProjects={value.compleatedProjects}
+            />
+          </div>
         ))}
       </div>
       <div className="mt-7 flex items-center w-[130px] group">
