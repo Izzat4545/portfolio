@@ -63,8 +63,13 @@ const RightSection = () => {
   }, [setAboutInView]);
 
   return (
-    <div className="w-[50%] py-20">
+    <div className="lg:w-[50%] w-full py-20">
       <div id="about" className="text-[18px]">
+        <div className="w-full lg:hidden z-10 py-1 bg-slate-900/65 backdrop-blur sticky top-0">
+          <div className="text-sm font-bold my-6 uppercase tracking-widest block text-slate-200">
+            About
+          </div>
+        </div>
         <p>
           In 2018, I was a passionate gamer, immersing myself in virtual worlds.
           In 2021, I took a pivotal step by enrolling in the Computer Science
@@ -83,14 +88,19 @@ const RightSection = () => {
         </p>
       </div>
       <div id="experience" className="mt-32 flex flex-col gap-1">
+        <div className="w-full lg:hidden z-10 py-1 bg-slate-900/65 backdrop-blur sticky top-0">
+          <div className="text-sm font-bold my-6 uppercase tracking-widest block text-slate-200 lg:hidden">
+            Experience
+          </div>
+        </div>
         {data.experice.map((value, index) => (
           <div
             onMouseEnter={() => setCurrentIndex(index)}
             onMouseLeave={() => setCurrentIndex(undefined)}
             className={`${
               currentIndex === undefined || currentIndex === index
-                ? "opacity-100"
-                : "opacity-50"
+                ? "lg:opacity-100"
+                : "lg:opacity-50"
             } transition-all`}
             key={index}
           >
@@ -118,6 +128,11 @@ const RightSection = () => {
         <ArrowIcon />
       </div>
       <div id="projects" className="mt-32 flex flex-col gap-1">
+        <div className="w-full lg:hidden z-10 py-1 bg-slate-900/65 backdrop-blur sticky top-0">
+          <div className="text-sm font-bold my-6 uppercase tracking-widest block text-slate-200">
+            Projects
+          </div>
+        </div>
         {data.projects.map((value, index) => (
           <ProjectsList
             key={index}

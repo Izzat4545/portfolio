@@ -11,7 +11,7 @@ const LeftSection = () => {
   const isProjectsInView = useStore((state) => state.isProjectsInView);
 
   return (
-    <div className="sticky h-[80vh] top-20 bottom-10 flex flex-col justify-between">
+    <div className="lg:sticky lg:h-[80vh] lg:top-20 flex flex-col justify-between">
       {/* INFO */}
       <div>
         <div className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
@@ -25,7 +25,7 @@ const LeftSection = () => {
         </p>
       </div>
       {/* CURRENT SECTION INDICATOR */}
-      <div className="flex flex-col gap-4 text-[12px] mt-16 w-max">
+      <div className="hidden lg:flex flex-col gap-4 text-[12px] mt-16 w-max">
         <div className="flex items-center gap-2">
           <span
             className={`${

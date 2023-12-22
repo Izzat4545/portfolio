@@ -19,21 +19,22 @@ const Home = () => {
       setGradientPosition({ x: event.clientX, y: event.clientY });
     };
 
+    // Apply radial gradient and background color to the body if the screen width is greater than or equal to 1024px
+    if (window.innerWidth >= 1024) {
+      document.body.style.background = `radial-gradient(600px at ${gradientPosition.x}px ${gradientPosition.y}px, rgba(29, 78, 216, 0.15), transparent 80%) #0f172a`;
+      document.body.style.backgroundAttachment = "fixed"; // or "scroll" depending on your preference
+    }
+
+    // Add event listener for mousemove
     document.addEventListener("mousemove", updateGradientPosition);
-
-    return () => {
-      document.removeEventListener("mousemove", updateGradientPosition);
-    };
-  }, []);
-
-  useEffect(() => {
-    // Apply radial gradient to the body
-    document.body.style.background = `radial-gradient(600px at ${gradientPosition.x}px ${gradientPosition.y}px, rgba(29, 78, 216, 0.15), transparent 80%), #0f172a`;
-    document.body.style.backgroundAttachment = "fixed";
 
     // Cleanup on component unmount
     return () => {
-      document.body.style.background = ""; // Reset to default or remove this line if not needed
+      // Remove the event listener
+      document.removeEventListener("mousemove", updateGradientPosition);
+
+      // Reset styles
+      document.body.style.background = "";
       document.body.style.backgroundAttachment = "";
     };
   }, [gradientPosition]);
