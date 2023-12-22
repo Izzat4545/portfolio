@@ -9,66 +9,42 @@ import useStore from "../store/store";
 import { useInView } from "framer-motion";
 
 const RightSection = () => {
+  const about = useRef(null);
+  const isAboutInView = useInView(about);
+  const experice = useRef(null);
+  const isExpericeInView = useInView(experice);
+  const projects = useRef(null);
+  const isProjectsInView = useInView(projects);
   const setAboutInView = useStore((state) => state.setAboutInView);
   const setExpericeInView = useStore((state) => state.setExperienceInView);
   const setProjectsInView = useStore((state) => state.setProjectsInView);
   const [currentIndex, setCurrentIndex] = useState<number>();
 
-  const projRef = useRef(null);
-  const isProjInView = useInView(projRef);
-
-  const scrollPosition = useRef(0);
   useEffect(() => {
-    const handleScroll = () => {
-      // Update the ref with the current scroll position
-      scrollPosition.current = window.scrollY;
-
-      // Your scroll logic here
-      const aboutOffset = 0;
-      const expericeOffset = 300;
-      const projectsOffset = 1200;
-
-      if (
-        scrollPosition.current >= aboutOffset &&
-        scrollPosition.current < expericeOffset
-      ) {
-        setAboutInView(true);
-      } else {
-        setAboutInView(false);
-      }
-
-      if (
-        scrollPosition.current > expericeOffset &&
-        scrollPosition.current < projectsOffset
-      ) {
-        setExpericeInView(true);
-      } else {
-        setExpericeInView(false);
-      }
-
-      if (isProjInView) {
-        setExpericeInView(false);
-        setProjectsInView(true);
-      } else {
-        setProjectsInView(false);
-      }
-    };
-    // Add scroll event listener
-    window.addEventListener("scroll", handleScroll);
-
-    // Cleanup the event listener on component unmount
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [isProjInView, setAboutInView, setExpericeInView, setProjectsInView]);
-
-  useEffect(() => {
-    setAboutInView(true);
-  }, [setAboutInView]);
-
+    if (isAboutInView && isExpericeInView) {
+      setAboutInView(true);
+      setExpericeInView(false);
+    } else {
+      setAboutInView(false);
+      setExpericeInView(true);
+    }
+    if (isExpericeInView && isProjectsInView) {
+      setProjectsInView(true);
+      setExpericeInView(false);
+    } else {
+      setProjectsInView(false);
+    }
+  }, [
+    isAboutInView,
+    isExpericeInView,
+    isProjectsInView,
+    setAboutInView,
+    setExpericeInView,
+    setProjectsInView,
+  ]);
   return (
     <div className="lg:w-[50%] w-full py-20">
-      <div id="about" className="text-[18px]">
+      <div id="about" className="text-[18px]" ref={about}>
         <div className="w-full lg:hidden z-10 py-1 bg-slate-900/65 backdrop-blur sticky top-0">
           <div className="text-sm font-bold my-6 uppercase tracking-widest block text-slate-200">
             About
@@ -101,6 +77,7 @@ const RightSection = () => {
           <div
             onMouseEnter={() => setCurrentIndex(index)}
             onMouseLeave={() => setCurrentIndex(undefined)}
+            ref={experice}
             className={`${
               currentIndex === undefined || currentIndex === index
                 ? "lg:opacity-100"
@@ -131,7 +108,7 @@ const RightSection = () => {
         </Link>
         <ArrowIcon />
       </div>
-      <div ref={projRef} id="projects" className="mt-32 flex flex-col gap-1">
+      <div id="projects" className="mt-32 flex flex-col gap-1">
         <div className="w-full lg:hidden z-10 py-1 bg-slate-900/65 backdrop-blur sticky top-0">
           <div className="text-sm font-bold my-6 uppercase tracking-widest block text-slate-200">
             Projects
@@ -145,6 +122,7 @@ const RightSection = () => {
             title={value.title}
           />
         ))}
+        <div ref={projects}></div>
       </div>
     </div>
   );
