@@ -45,7 +45,7 @@ const RightSection = () => {
   return (
     <div className="lg:w-[50%] w-full py-20">
       <div id="about" className="text-[18px]" ref={about}>
-        <div className="w-full lg:hidden z-10 py-1 bg-slate-900/65 backdrop-blur sticky top-0">
+        <div className="w-full lg:hidden z-10 py-1 bg-slate-900/75 backdrop-blur sticky top-[-1px]">
           <div className="text-sm font-bold my-6 uppercase tracking-widest block text-slate-200">
             About
           </div>
@@ -68,7 +68,7 @@ const RightSection = () => {
         </p>
       </div>
       <div id="experience" className="mt-32 flex flex-col gap-1">
-        <div className="w-full lg:hidden z-10 py-1 bg-slate-900/65 backdrop-blur sticky top-0">
+        <div className="w-full lg:hidden z-10 py-1 bg-slate-900/75 backdrop-blur sticky top-[-1px]">
           <div className="text-sm font-bold my-6 uppercase tracking-widest block text-slate-200 lg:hidden">
             Experience
           </div>
@@ -109,7 +109,7 @@ const RightSection = () => {
         <ArrowIcon />
       </div>
       <div id="projects" className="mt-32 flex flex-col gap-1">
-        <div className="w-full lg:hidden z-10 py-1 bg-slate-900/65 backdrop-blur sticky top-0">
+        <div className="w-full lg:hidden z-10 py-1 bg-slate-900/75 backdrop-blur sticky top-[-1px]">
           <div className="text-sm font-bold my-6 uppercase tracking-widest block text-slate-200">
             Projects
           </div>
