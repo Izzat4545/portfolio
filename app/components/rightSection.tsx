@@ -6,12 +6,16 @@ import ArrowIcon from "../assets/arrowIcon";
 import ProjectsList from "./rightSectionComponents/projectsList";
 import { useEffect, useRef, useState } from "react";
 import useStore from "../store/store";
+import { useInView } from "framer-motion";
 
 const RightSection = () => {
   const setAboutInView = useStore((state) => state.setAboutInView);
   const setExpericeInView = useStore((state) => state.setExperienceInView);
   const setProjectsInView = useStore((state) => state.setProjectsInView);
   const [currentIndex, setCurrentIndex] = useState<number>();
+
+  const projRef = useRef(null);
+  const isProjInView = useInView(projRef);
 
   const scrollPosition = useRef(0);
   useEffect(() => {
@@ -42,13 +46,13 @@ const RightSection = () => {
         setExpericeInView(false);
       }
 
-      if (scrollPosition.current > projectsOffset) {
+      if (isProjInView) {
+        setExpericeInView(false);
         setProjectsInView(true);
       } else {
         setProjectsInView(false);
       }
     };
-
     // Add scroll event listener
     window.addEventListener("scroll", handleScroll);
 
@@ -56,7 +60,7 @@ const RightSection = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [setAboutInView, setExpericeInView, setProjectsInView]);
+  }, [isProjInView, setAboutInView, setExpericeInView, setProjectsInView]);
 
   useEffect(() => {
     setAboutInView(true);
@@ -127,7 +131,7 @@ const RightSection = () => {
         </Link>
         <ArrowIcon />
       </div>
-      <div id="projects" className="mt-32 flex flex-col gap-1">
+      <div ref={projRef} id="projects" className="mt-32 flex flex-col gap-1">
         <div className="w-full lg:hidden z-10 py-1 bg-slate-900/65 backdrop-blur sticky top-0">
           <div className="text-sm font-bold my-6 uppercase tracking-widest block text-slate-200">
             Projects
