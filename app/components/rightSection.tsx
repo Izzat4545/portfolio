@@ -67,7 +67,7 @@ const RightSection = () => {
           online platforms.
         </p>
       </div>
-      <div id="experience" className="mt-32 flex flex-col gap-1">
+      <div id="experience" ref={experice} className="mt-32 flex flex-col gap-1">
         <div className="w-full lg:hidden z-10 py-1 bg-slate-900/75 backdrop-blur sticky top-[-1px]">
           <div className="text-sm font-bold my-6 uppercase tracking-widest block text-slate-200 lg:hidden">
             Experience
@@ -77,7 +77,6 @@ const RightSection = () => {
           <div
             onMouseEnter={() => setCurrentIndex(index)}
             onMouseLeave={() => setCurrentIndex(undefined)}
-            ref={experice}
             className={`${
               currentIndex === undefined || currentIndex === index
                 ? "lg:opacity-100"
