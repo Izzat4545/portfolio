@@ -55,7 +55,38 @@
     {
       "title": "Melagrana online store",
       "projectLink": "https://melagrana.uz/",
-      "content": "I dedicated over one and a half months to the development of this project, which resulted in the creation of a fully functional online store. This platform allows users to make purchases using the Payme payment system. The technologies employed in this project include Next.js, Tailwind CSS, Redux Toolkit, Framer Motion, and TypeScript."
+      "content": "I dedicated over one and a half months to the development of this project, which resulted in the creation of a fully functional online store. This platform allows users to make purchases using the Payme payment system. The technologies employed in this project include Next.js, Tailwind CSS, Redux Toolkit, Framer Motion, and TypeScript.",
+      "tools": [
+        "Next js",
+        "Js",
+        "TypeScript",
+        "React.js",
+        "GitHub",
+        "Git",
+        "Redux.js",
+        "REST APIs",
+        "CSS",
+        "Tailwind CSS",
+        "Framer motion"
+      ]
+    },
+    {
+      "title": "To do app",
+      "projectLink": "https://todo-nams.vercel.app",
+      "content": "In this Vue.js pet project, I have developed a fully functional to-do application tailored to enhance users' daily task organization. The project seamlessly integrates with Firebase, leveraging its API and database to manage tasks efficiently. An authentication system has been implemented to ensure secure user access, fostering a personalized and secure task management experience. Users can effortlessly add, delete, and update tasks through an intuitive interface, creating a practical and responsive solution. The project highlights my proficiency in Vue.js, Firebase integration, and my commitment to delivering user-centric applications.",
+      "tools": [
+        "Vue js",
+        "Pinia vuejs",
+        "Js",
+        "TypeScript",
+        "GitHub",
+        "Git",
+        "REST APIs",
+        "Firebase",
+        "CSS",
+        "Tailwind CSS",
+        "Daisy UI"
+      ]
     }
   ]
 }

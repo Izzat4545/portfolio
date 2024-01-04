@@ -119,6 +119,7 @@ const RightSection = () => {
             projectLink={value.projectLink}
             content={value.content}
             title={value.title}
+            tools={value.tools}
           />
         ))}
         <div ref={projects}></div>

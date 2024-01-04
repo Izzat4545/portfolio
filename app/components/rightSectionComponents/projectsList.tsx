@@ -5,6 +5,7 @@ type Props = {
   title: string;
   content: string;
   projectLink: string;
+  tools: string[];
 };
 const ProjectsList = (props: Props) => {
   return (
@@ -19,6 +20,16 @@ const ProjectsList = (props: Props) => {
         </div>
       </div>
       <div>{props.content}</div>
+      <div className="flex gap-2 mt-2 flex-wrap">
+        {props.tools?.map((value, index) => (
+          <div
+            className="px-3 py-1 text-xs font-medium leading-5 rounded-full text-teal-300 bg-teal-400/10"
+            key={index}
+          >
+            {value}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
