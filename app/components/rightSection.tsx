@@ -27,12 +27,11 @@ const RightSection = () => {
     } else {
       setAboutInView(false);
       setExpericeInView(true);
-    }
-    if (isExpericeInView && isProjectsInView) {
-      setProjectsInView(true);
-      setExpericeInView(false);
-    } else {
       setProjectsInView(false);
+    }
+    if (isProjectsInView) {
+      setExpericeInView(false);
+      setProjectsInView(true);
     }
   }, [
     isAboutInView,
@@ -44,7 +43,8 @@ const RightSection = () => {
   ]);
   return (
     <div className="lg:w-[50%] w-full py-20">
-      <div id="about" className="text-[18px]" ref={about}>
+      <div ref={about}></div>
+      <div id="about" className="text-[18px]">
         <div className="w-full lg:hidden z-10 py-1 bg-slate-900/75 backdrop-blur sticky top-[-1px]">
           <div className="text-sm font-bold my-6 uppercase tracking-widest block text-slate-200">
             About
@@ -67,7 +67,8 @@ const RightSection = () => {
           online platforms.
         </p>
       </div>
-      <div id="experience" ref={experice} className="mt-32 flex flex-col gap-1">
+      <div id="experience" ref={experice}></div>
+      <div ref={experice} className="mt-32 flex flex-col gap-1">
         <div className="w-full lg:hidden z-10 py-1 bg-slate-900/75 backdrop-blur sticky top-[-1px]">
           <div className="text-sm font-bold my-6 uppercase tracking-widest block text-slate-200 lg:hidden">
             Experience
@@ -107,7 +108,8 @@ const RightSection = () => {
         </Link>
         <ArrowIcon />
       </div>
-      <div id="projects" className="mt-32 flex flex-col gap-1">
+      <div ref={projects}></div>
+      <div id="projects" ref={projects} className="mt-32 flex flex-col gap-1">
         <div className="w-full lg:hidden z-10 py-1 bg-slate-900/75 backdrop-blur sticky top-[-1px]">
           <div className="text-sm font-bold my-6 uppercase tracking-widest block text-slate-200">
             Projects
@@ -122,7 +124,6 @@ const RightSection = () => {
             tools={value.tools}
           />
         ))}
-        <div ref={projects}></div>
       </div>
     </div>
   );
