@@ -18,7 +18,7 @@ const RightSection = () => {
   const setAboutInView = useStore((state) => state.setAboutInView);
   const setExpericeInView = useStore((state) => state.setExperienceInView);
   const setProjectsInView = useStore((state) => state.setProjectsInView);
-  const [currentIndex, setCurrentIndex] = useState<number>();
+  const [hoveredIndex, setHoveredIndex] = useState<number>();
 
   useEffect(() => {
     if (isAboutInView && isExpericeInView) {
@@ -76,10 +76,10 @@ const RightSection = () => {
         </div>
         {data.experice.map((value, index) => (
           <div
-            onMouseEnter={() => setCurrentIndex(index)}
-            onMouseLeave={() => setCurrentIndex(undefined)}
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(undefined)}
             className={`${
-              currentIndex === undefined || currentIndex === index
+              hoveredIndex === undefined || hoveredIndex === index
                 ? "lg:opacity-100"
                 : "lg:opacity-50"
             } transition-all`}
