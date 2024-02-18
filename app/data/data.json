@@ -97,22 +97,6 @@
         "Tailwind CSS",
         "Daisy UI"
       ]
-    },
-    {
-      "title": "Jushkin Tech Portfolio",
-      "projectLink": "https://www.jushkin.tech/",
-      "content": "This is a freeliance project that I did for my friend. This website serves as portfolio website.",
-      "tools": [
-        "Next js",
-        "Js",
-        "TypeScript",
-        "React.js",
-        "GitHub",
-        "Git",
-        "Tailwind CSS",
-        "Daisy UI",
-        "Framer motion"
-      ]
     }
   ]
 }
