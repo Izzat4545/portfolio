@@ -1,7 +1,17 @@
 {
   "experice": [
     {
-      "fromTo": "Dec 2023 - Present",
+      "fromTo": "Jan 2024 - Present",
+      "companyName": "Single integrator - UZINFOCOM LLC",
+      "companyWebsite": "https://uzinfocom.uz/uz",
+      "role": "Frontend Engineer",
+      "position": "Internship",
+      "content": "<li>During my internship, I delved into a new framework unfamiliar to me: Angular. Immersed in this technology, I navigated through the intricacies of Angular and contributed to a substantial project known as EnergoNazorat. This experience not only broadened my skill set but also provided me with valuable insights into the complexities of modern web development.</li>",
+      "tools": ["Angular", "Bootstrap", "Git", "Gitlab", "Figma"],
+      "compleatedProjects": []
+    },
+    {
+      "fromTo": "Dec 2023 - Jan 2024",
       "companyName": "Itransition Group",
       "companyWebsite": "https://www.itransition.com/",
       "role": "Frontend Engineer",
@@ -11,7 +21,7 @@
       "compleatedProjects": []
     },
     {
-      "fromTo": "Nov 2023 - Present",
+      "fromTo": "Nov 2023 - Jan 2024",
       "role": "Frontend Engineer",
       "companyName": "Next Level Group",
       "companyWebsite": "https://nextlevelgroup.uz/",
